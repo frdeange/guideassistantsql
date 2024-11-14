@@ -1,0 +1,2 @@
+#rename this file to .env and adapt the info to your environment config
+BACKEND_URL=http://localhost:8000

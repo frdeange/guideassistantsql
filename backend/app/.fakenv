@@ -1,0 +1,10 @@
+#rename this to .env and insert your info
+# Variables de entorno para SQL Server
+SQLSERVER_HOST=sqlserver
+SQLSERVER_PORT=1433
+SQLSERVER_USER=SA
+SQLSERVER_PASSWORD=TuPassword123
+SQLSERVER_DATABASE=AsistenteDB
+
+# Variables de entorno para Azure OpenAI
+OPENAI_API_KEY=yourAzureOpenAIKey
