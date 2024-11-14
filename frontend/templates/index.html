@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asistente Virtual</title>
+</head>
+<body>
+    <h1>Asistente Virtual</h1>
+    <form method="post">
+        <textarea name="pregunta" rows="4" cols="50" placeholder="Escribe tu consulta aquí..."></textarea><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    {% if respuesta %}
+    <h2>Respuesta:</h2>
+    <div>{{ respuesta }}</div>
+    {% endif %}
+</body>
+</html>

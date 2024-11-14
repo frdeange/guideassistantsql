@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/python:3.9-bullseye
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    working_dir: /workspace
+    depends_on:
+      - sqlserver
+    environment:
+      - SQLSERVER_HOST=sqlserver
+      - SQLSERVER_PORT=1433
+      - SQLSERVER_USER=SA
+      - SQLSERVER_PASSWORD=TuPassword123
+    networks:
+      - devnetwork
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=TuPassword123
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - devnetwork
+
+volumes:
+  sqlserver-data:
+
+networks:
+  devnetwork:
